@@ -1,0 +1,19 @@
+# OS
+.DS_Store
+Thumbs.db
+
+# Editors / IDEs
+.idea/
+.vscode/
+*.swp
+
+# Local automation / tooling artifacts
+.playwright-mcp/
+scratchshots/
+
+# Design-iteration screenshots (kept locally, not versioned)
+v0_desktop.jpeg
+v1_desktop.jpeg
+v1_mobile.jpeg
+v1_tablet.jpeg
+v2_desktop.jpeg

@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" role="img" aria-label="Presso">
+  <rect width="100" height="100" rx="26" fill="#1a0d2e"/>
+  <path d="M50 15 C50 15 27 46 27 65 a23 23 0 1 0 46 0 C73 46 50 15 50 15 Z" fill="#ffd60a" stroke="#1a0d2e" stroke-width="0"/>
+  <circle cx="41" cy="61" r="6" fill="#fff4d6" opacity="0.38"/>
+</svg>

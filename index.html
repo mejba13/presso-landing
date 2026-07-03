@@ -1,0 +1,383 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Presso — Loud flavor, zero sugar.</title>
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="icon" href="favicon.ico" sizes="32x32">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta name="theme-color" content="#ff2e88">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,700;12..96,800&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+/* ============ Reset ============ */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html,body{width:100%;overflow-x:hidden}
+html{scroll-behavior:smooth;scroll-padding-top:24px}
+body{-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+img,svg{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+button{font:inherit;cursor:pointer;border:0;background:none;color:inherit}
+::selection{background:currentColor;color:#fff}
+
+/* ============ Design tokens ============ */
+:root{
+  --pink:#ff2e88;    /* page background; marquee dots */
+  --orange:#ff7a1a;  /* brand droplet */
+  --yellow:#ffd60a;  /* accent */
+  --blue:#3d5cff;    /* "LIFE." word; "chaos." em */
+  --green:#0fdc7f;   /* status dot; sticker; green scream */
+  --cream:#fff4d6;   /* text on ink */
+  --ink:#1a0d2e;     /* text; borders; dark fills */
+  --font:'Bricolage Grotesque',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;
+  --mono:'DM Mono',ui-monospace,monospace;
+}
+body{
+  background:var(--pink);
+  color:var(--ink);
+  font-family:var(--font);
+  font-size:17px;
+  line-height:1.5;
+  position:relative;
+}
+
+/* ============ Background decoration ============ */
+.bg{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden}
+.blob{position:absolute;border-radius:50%;filter:blur(40px);opacity:.5}
+.blob.s1{width:400px;height:400px;background:var(--yellow);top:-100px;right:-80px;animation:f1 18s ease-in-out infinite}
+.blob.s2{width:300px;height:300px;background:var(--blue);bottom:200px;left:-50px;animation:f2 14s ease-in-out infinite}
+.blob.s3{width:250px;height:250px;background:var(--green);top:50%;left:50%;animation:f3 22s ease-in-out infinite}
+@keyframes f1{50%{transform:translate(-50px,30px) scale(1.15)}}
+@keyframes f2{50%{transform:translate(60px,-40px) scale(.9)}}
+@keyframes f3{50%{transform:translate(-30%,40%) scale(1.2)}}
+main,.nav,footer{position:relative;z-index:1}
+
+/* ============ Nav ============ */
+.nav{display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:24px;padding:22px 32px}
+.brand{display:inline-flex;align-items:flex-start;font-family:var(--font);font-weight:800;font-size:36px;letter-spacing:-.04em;line-height:1;color:var(--ink);transform:rotate(-2deg);transition:transform .3s}
+.brand:hover{transform:rotate(2deg) scale(1.05)}
+.brand .drop{width:22px;height:30px;margin-left:5px;margin-top:2px}
+.brand .drop path{fill:var(--orange);stroke:var(--ink);stroke-width:2}
+.nav ul{display:flex;gap:8px;justify-self:center;list-style:none}
+.nav ul a{display:inline-block;padding:10px 18px;background:var(--ink);color:var(--cream);border-radius:99px;font-weight:700;font-size:14px;letter-spacing:-.01em;transition:background .3s,color .3s,transform .3s}
+.nav ul a:hover{background:var(--yellow);color:var(--ink);transform:translateY(-2px) rotate(-2deg)}
+.nav .buy{justify-self:end;padding:14px 22px;background:var(--ink);color:var(--cream);border-radius:99px;font-weight:800;font-size:15px;transition:background .3s,color .3s,transform .3s}
+.nav .buy:hover{background:var(--yellow);color:var(--ink);transform:rotate(-3deg) scale(1.05)}
+
+/* ============ Hero ============ */
+.hero{padding:40px 32px 80px;text-align:center;position:relative}
+.eyebrow{display:inline-flex;align-items:center;gap:10px;padding:8px 16px;background:var(--ink);color:var(--cream);border-radius:99px;font-family:var(--mono);font-weight:500;font-size:12px;letter-spacing:.08em;text-transform:uppercase;margin-bottom:32px}
+.eyebrow .dot{width:8px;height:8px;border-radius:50%;background:var(--green);animation:blink 1.4s infinite}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.3}}
+.hero-h{font-family:var(--font);font-weight:800;font-size:clamp(72px,15vw,220px);line-height:.82;letter-spacing:-.05em;text-wrap:balance;margin-bottom:40px}
+.hero-h .wrd{display:inline-block;animation:wiggle 5s ease-in-out infinite}
+.hero-h .w1{color:var(--ink)}
+.hero-h .w2{color:var(--yellow);-webkit-text-stroke:3px var(--ink);animation-delay:.4s}
+.hero-h .w3{color:var(--ink);animation-delay:.8s}
+.hero-h .w4{color:var(--blue);animation-delay:1.2s}
+@keyframes wiggle{50%{transform:translateY(-12px) rotate(-1.5deg)}}
+.hero .sub{font-size:22px;line-height:1.4;font-weight:500;max-width:580px;margin:0 auto 36px}
+.hero-ctas{display:inline-flex;gap:14px;align-items:center;flex-wrap:wrap;justify-content:center}
+.btn-primary{padding:20px 32px;background:var(--ink);color:var(--cream);border-radius:99px;font-family:var(--font);font-weight:800;font-size:18px;display:inline-flex;align-items:center;gap:9px;transition:background .3s,color .3s,transform .3s}
+.btn-primary:hover{background:var(--yellow);color:var(--ink);transform:rotate(-2deg) scale(1.05)}
+.btn-outline{padding:20px 28px;background:transparent;border:3px solid var(--ink);color:var(--ink);border-radius:99px;font-weight:800;font-size:18px;display:inline-flex;align-items:center;gap:9px;transition:background .3s,color .3s,transform .3s}
+.btn-outline:hover{background:var(--ink);color:var(--cream);transform:rotate(2deg) scale(1.05)}
+
+.hero-figure{max-width:1100px;margin:60px auto 0;padding:0 32px;position:relative}
+.hero-frame{border-radius:36px;border:6px solid var(--ink);box-shadow:14px 14px 0 var(--ink);aspect-ratio:16/10;overflow:hidden;background:var(--ink)}
+.hero-frame img{width:100%;height:100%;object-fit:cover}
+.sticker{position:absolute;display:grid;place-items:center;text-align:center;font-family:var(--font);font-weight:800;color:var(--ink);border:4px solid var(--ink);border-radius:50%;line-height:1.05}
+.sticker.s-tl{top:-30px;left:-30px;width:140px;height:140px;background:var(--yellow);font-size:15px;animation:spinTL 14s linear infinite}
+.sticker.s-br{bottom:-40px;right:-30px;width:160px;height:160px;background:var(--green);font-size:20px;animation:spinBR 18s linear infinite}
+@keyframes spinTL{from{transform:rotate(-12deg)}to{transform:rotate(336deg)}}
+@keyframes spinBR{from{transform:rotate(0)}to{transform:rotate(-348deg)}}
+
+/* ============ Marquee ============ */
+.marquee{margin:80px -40px;padding:30px 0;background:var(--ink);color:var(--yellow);border-top:6px solid var(--ink);border-bottom:6px solid var(--ink);transform:rotate(-1.5deg);overflow:hidden}
+.marquee-track{display:flex;gap:60px;white-space:nowrap;width:max-content;align-items:center;animation:marq 30s linear infinite;font-family:var(--font);font-weight:800;font-size:78px;letter-spacing:-.03em;line-height:1}
+.marquee-track span{display:inline-flex;align-items:center;gap:60px}
+.marquee-track span::after{content:"";width:32px;height:32px;border-radius:50%;background:var(--pink);flex:0 0 auto}
+@keyframes marq{to{transform:translateX(-50%)}}
+
+/* ============ Flavors ============ */
+.flavors{max-width:1240px;margin:0 auto;padding:80px 32px}
+.section-h{font-family:var(--font);font-weight:800;font-size:clamp(48px,8vw,110px);line-height:.92;letter-spacing:-.04em;text-align:center;text-wrap:balance;margin-bottom:60px}
+.section-h em{font-style:italic;color:var(--blue)}
+.flavor-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+.flavor{position:relative;padding:26px;border:4px solid var(--ink);border-radius:32px;box-shadow:8px 8px 0 var(--ink);display:flex;flex-direction:column;transition:transform .4s,box-shadow .4s}
+.flavor:hover{transform:translate(-4px,-4px);box-shadow:14px 14px 0 var(--ink)}
+.flavor.f1{background:#ffe9d4}
+.flavor.f2{background:#d8e7ff;transform:rotate(1deg)}
+.flavor.f2:hover{transform:rotate(1deg) translate(-4px,-4px)}
+.flavor.f3{background:#d4f7e2}
+
+.flavor .visual{position:relative;aspect-ratio:1;border-radius:22px;border:3px solid var(--ink);overflow:hidden;margin-bottom:18px}
+.flavor .visual img{width:100%;height:100%;object-fit:cover;transition:transform .6s}
+.flavor:hover .visual img{transform:scale(1.08) rotate(2deg)}
+.flavor .visual.placeholder{display:grid;place-items:center;background:radial-gradient(120% 120% at 30% 22%,#a7ffcf,var(--green) 68%)}
+.flavor .visual.placeholder .emoji{font-size:96px;filter:drop-shadow(0 6px 0 rgba(26,13,46,.16))}
+
+/* collectible number sticker */
+.flavor .badge{position:absolute;top:12px;left:12px;z-index:2;width:46px;height:46px;display:grid;place-items:center;background:var(--accent);color:var(--ink);border:3px solid var(--ink);border-radius:50%;font-family:var(--font);font-weight:800;font-size:19px;transform:rotate(-8deg);box-shadow:3px 3px 0 var(--ink)}
+.flavor:hover .badge{transform:rotate(6deg) scale(1.08)}
+.flavor .badge,.flavor:hover .badge{transition:transform .4s}
+
+/* flavor category tag */
+.flavor .tag{align-self:flex-start;font-family:var(--mono);font-weight:500;font-size:11px;letter-spacing:.13em;text-transform:uppercase;color:var(--ink);background:var(--accent);border:2px solid var(--ink);border-radius:99px;padding:5px 12px;margin-bottom:13px}
+
+.flavor h3{font-family:var(--font);font-weight:800;font-size:34px;letter-spacing:-.03em;line-height:.9;margin-bottom:10px}
+
+.flavor .rating{display:flex;align-items:center;gap:8px;font-family:var(--mono);font-size:12px;color:var(--ink);margin-bottom:14px}
+.flavor .rating .stars{letter-spacing:2px}
+.flavor .rating em{font-style:normal;opacity:.55}
+
+.flavor p{font-size:15px;line-height:1.45;color:#4a3760;margin-bottom:18px}
+
+.flavor .price{display:flex;justify-content:space-between;align-items:flex-end;padding-top:16px;margin-bottom:16px;border-top:2px solid rgba(26,13,46,.13)}
+.flavor .price .amt{display:flex;flex-direction:column;line-height:1}
+.flavor .price .amt b{font-family:var(--font);font-weight:800;font-size:30px;letter-spacing:-.02em}
+.flavor .price .amt .per{font-family:var(--mono);font-size:11px;opacity:.6;margin-top:5px}
+.flavor .price .meta{font-family:var(--mono);font-size:12px;opacity:.7;padding-bottom:3px}
+
+.flavor .add{margin-top:auto;width:100%;padding:15px;display:inline-flex;align-items:center;justify-content:center;gap:9px;background:var(--ink);color:var(--cream);border-radius:99px;font-family:var(--font);font-weight:800;font-size:16px;transition:background .3s,color .3s,transform .3s}
+.flavor .add .plus{display:inline-grid;place-items:center;width:22px;height:22px;border-radius:50%;background:var(--accent);color:var(--ink);font-size:17px;line-height:1;transition:transform .3s,background .3s,color .3s}
+.flavor .add:hover{background:var(--accent);color:var(--ink);transform:translateY(-2px)}
+.flavor .add:hover .plus{background:var(--ink);color:var(--accent);transform:rotate(90deg)}
+
+/* ============ Manifesto ============ */
+.manifesto{max-width:900px;margin:0 auto;padding:120px 32px;text-align:center}
+.manifesto h2{font-family:var(--font);font-weight:800;font-size:clamp(40px,6vw,80px);line-height:1;letter-spacing:-.035em;text-wrap:balance;margin-bottom:36px}
+.manifesto h2 .stk{text-decoration:line-through;color:#6a5278;font-weight:400;font-style:italic}
+.manifesto h2 .hl{display:inline-block;background:var(--yellow);border:3px solid var(--ink);border-radius:18px;padding:0 .1em;transform:rotate(-1deg)}
+.manifesto p{font-size:20px;line-height:1.5;font-weight:500;max-width:680px;margin:0 auto}
+.manifesto .proof{list-style:none;display:flex;flex-wrap:wrap;justify-content:center;gap:12px;margin-top:40px}
+.manifesto .proof li{font-family:var(--mono);font-weight:500;font-size:13px;letter-spacing:.03em;text-transform:uppercase;color:var(--ink);background:var(--cream);border:3px solid var(--ink);border-radius:99px;padding:11px 20px;box-shadow:4px 4px 0 var(--ink);transition:transform .25s}
+.manifesto .proof li:hover{transform:translateY(-3px) rotate(-2deg)}
+.manifesto .proof li:nth-child(2){background:var(--yellow)}
+.manifesto .proof li:nth-child(4){background:var(--green)}
+
+/* ============ Press ============ */
+.press{padding:60px 32px;background:var(--ink);color:var(--cream);border-radius:48px 48px 0 0;margin-top:60px;text-align:center}
+.press .label{font-family:var(--mono);font-weight:500;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--yellow);margin-bottom:24px}
+.press-logos{display:flex;flex-wrap:wrap;justify-content:center;gap:48px}
+.press-logos span{font-family:var(--font);font-weight:800;font-size:24px;opacity:.7;transition:opacity .3s,color .3s,transform .3s}
+.press-logos span:hover{opacity:1;color:var(--yellow);transform:rotate(-2deg)}
+
+/* ============ Footer ============ */
+footer{background:var(--ink);color:var(--cream);padding:60px 32px 30px}
+footer .grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:32px;max-width:1240px;margin:0 auto}
+.foot-brand .brand-word{display:inline-flex;align-items:flex-start;font-family:var(--font);font-weight:800;font-size:80px;line-height:.85;letter-spacing:-.04em;color:var(--cream)}
+.foot-brand .drop{width:34px;height:46px;margin-left:6px;margin-top:6px}
+.foot-brand .drop path{fill:var(--yellow);stroke:var(--ink);stroke-width:2}
+.foot-brand p{font-size:14px;line-height:1.5;opacity:.7;max-width:300px;margin-top:20px}
+footer h4{font-family:var(--mono);font-weight:500;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--yellow);margin-bottom:14px}
+footer .col a{display:block;padding:3px 0;font-size:15px;opacity:.8;transition:opacity .3s,color .3s}
+footer .col a:hover{opacity:1;color:var(--yellow)}
+.copy-foot{max-width:1240px;margin:40px auto 0;padding-top:24px;border-top:1px solid rgba(255,244,214,.2);display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;font-family:var(--mono);font-weight:400;font-size:12px;opacity:.6}
+
+/* ============ Reveal ============ */
+.reveal{opacity:0;transform:translateY(40px) rotate(-2deg);transition:opacity .7s cubic-bezier(.34,1.56,.64,1),transform .7s cubic-bezier(.34,1.56,.64,1)}
+.reveal.in{opacity:1;transform:none}
+
+/* ============ Focus ============ */
+a:focus-visible,button:focus-visible{outline:3px solid var(--yellow);outline-offset:3px}
+
+/* ============ Responsive ============ */
+@media(max-width:780px){
+  .nav{grid-template-columns:auto auto;gap:14px;padding:18px}
+  .nav ul{display:none}
+  .nav .buy{padding:12px 18px}
+  .hero{padding:20px 18px 60px}
+  .hero-h{font-size:clamp(56px,18vw,120px)}
+  .hero-figure{padding:0 18px}
+  .marquee{margin:60px -20px}
+  .marquee-track{font-size:48px}
+  .sticker.s-tl{width:90px;height:90px;font-size:11px;top:-15px;left:-15px}
+  .sticker.s-br{width:100px;height:100px;font-size:13px;bottom:-20px;right:-15px}
+  .flavors,.manifesto,.press{padding-left:18px;padding-right:18px}
+  .flavor-grid{grid-template-columns:1fr;gap:18px}
+  .flavor.f2{transform:none}
+  .flavor.f2:hover{transform:translate(-4px,-4px)}
+  footer .grid{grid-template-columns:1fr 1fr;padding:0}
+  .foot-brand{grid-column:1 / -1}
+  .foot-brand .brand-word{font-size:54px}
+  .copy-foot{flex-direction:column;gap:8px}
+}
+
+@media(prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important}
+  html{scroll-behavior:auto}
+  .reveal{opacity:1;transform:none}
+}
+</style>
+</head>
+<body>
+
+<div class="bg" aria-hidden="true">
+  <div class="blob s1"></div>
+  <div class="blob s2"></div>
+  <div class="blob s3"></div>
+</div>
+
+<nav class="nav">
+  <a class="brand" href="#" aria-label="Presso — home">
+    Presso
+    <svg class="drop" viewBox="0 0 24 32" aria-hidden="true">
+      <path d="M12 2 C12 2 3 15 3 22 a9 9 0 1 0 18 0 C21 15 12 2 12 2 Z"/>
+    </svg>
+  </a>
+  <ul>
+    <li><a href="#flavors">Flavors</a></li>
+    <li><a href="#story">Story</a></li>
+    <li><a href="#">Stockists</a></li>
+    <li><a href="#">Wholesale</a></li>
+  </ul>
+  <a class="buy" href="#flavors">Shop the fridge 🧃</a>
+</nav>
+
+<main>
+  <section class="hero">
+    <div class="eyebrow reveal"><span class="dot"></span>Fresh batch — June 2026 drop</div>
+    <h1 class="hero-h reveal"><span class="wrd w1">LOUD</span> <span class="wrd w2">FLAVOR,</span><br><span class="wrd w3">ZERO</span> <span class="wrd w4">SUGAR.</span></h1>
+    <p class="sub reveal">Cold-pressed in small batches. Zero added sugar. 100% chaos in a bottle. Now in six flavors that taste like the volume knob broke at 11.</p>
+    <div class="hero-ctas reveal">
+      <a class="btn-primary" href="#flavors">Order a 6-pack <span>→</span></a>
+      <a class="btn-outline" href="#story">Read the story</a>
+    </div>
+    <div class="hero-figure reveal">
+      <div class="hero-frame">
+        <img src="assets/img/03-pulpa-splash.jpg" alt="Cold-pressed orange juice captured mid-splash">
+      </div>
+      <div class="sticker s-tl" aria-hidden="true">COLD<br>PRESSED<br>★ ★ ★</div>
+      <div class="sticker s-br" aria-hidden="true">NEW<br>FLAVOR<br>↓</div>
+    </div>
+  </section>
+
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee-track">
+      <span>FRESH</span><span>LOUD</span><span>COLD-PRESSED</span><span>NO BS</span>
+      <span>FRESH</span><span>LOUD</span><span>COLD-PRESSED</span><span>NO BS</span>
+    </div>
+  </div>
+
+  <section class="flavors" id="flavors">
+    <h2 class="section-h reveal">Pick your <em>chaos.</em></h2>
+    <div class="flavor-grid">
+      <article class="flavor f1 reveal" style="--accent:#ff7a1a">
+        <div class="visual">
+          <span class="badge">01</span>
+          <img src="assets/img/03-pulpa-splash.jpg" alt="Presso Orange Riot juice, mid-splash">
+        </div>
+        <span class="tag">Wake-up call</span>
+        <h3>Orange<br>Riot</h3>
+        <div class="rating"><span class="stars">★★★★★</span>4.9 <em>· 2,300 reviews</em></div>
+        <p>Florida valencias, ginger, a dirty splash of lemon. Tastes like sunrise yelling.</p>
+        <div class="price">
+          <div class="amt"><b>$24</b><span class="per">$4.00 / bottle</span></div>
+          <span class="meta">500ml · 6-pack</span>
+        </div>
+        <button class="add">Add to fridge <span class="plus">+</span></button>
+      </article>
+      <article class="flavor f2 reveal" style="--accent:#ff2e88">
+        <div class="visual">
+          <span class="badge">02</span>
+          <img src="assets/img/03-pulpa-bottle.jpg" alt="Presso Berry Brawl bottle">
+        </div>
+        <span class="tag">New drop</span>
+        <h3>Berry<br>Brawl</h3>
+        <div class="rating"><span class="stars">★★★★★</span>4.8 <em>· 1,840 reviews</em></div>
+        <p>Wild blackberry, hibiscus, and that pomegranate that bites back. Magenta forever.</p>
+        <div class="price">
+          <div class="amt"><b>$26</b><span class="per">$4.33 / bottle</span></div>
+          <span class="meta">500ml · 6-pack</span>
+        </div>
+        <button class="add">Add to fridge <span class="plus">+</span></button>
+      </article>
+      <article class="flavor f3 reveal" style="--accent:#0fdc7f">
+        <div class="visual placeholder">
+          <span class="badge">03</span>
+          <span class="emoji">🥒</span>
+        </div>
+        <span class="tag">Fan favorite</span>
+        <h3>Green<br>Scream</h3>
+        <div class="rating"><span class="stars">★★★★★</span>4.7 <em>· 960 reviews</em></div>
+        <p>Cucumber, mint, kale, lime. The "I'm being healthy" one — but make it loud.</p>
+        <div class="price">
+          <div class="amt"><b>$24</b><span class="per">$4.00 / bottle</span></div>
+          <span class="meta">500ml · 6-pack</span>
+        </div>
+        <button class="add">Add to fridge <span class="plus">+</span></button>
+      </article>
+    </div>
+  </section>
+
+  <section class="manifesto" id="story">
+    <h2 class="reveal">Juice for people who think <span class="stk">"wellness"</span> needs more <span class="hl">chaos.</span></h2>
+    <p class="reveal">No detox tea. No $12 celery water. Just real fruit, pressed loud and bottled the same day.</p>
+    <ul class="proof reveal">
+      <li>0g added sugar</li>
+      <li>Cold-pressed</li>
+      <li>Never from concentrate</li>
+      <li>6 loud flavors</li>
+    </ul>
+  </section>
+
+  <section class="press">
+    <div class="label">As featured in</div>
+    <div class="press-logos">
+      <span>Vogue</span><span>Eater</span><span>Hypebeast</span><span>It's Nice That</span><span>BoF</span><span>Dazed</span>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="grid">
+    <div class="foot-brand">
+      <a class="brand-word" href="#" aria-label="Presso — home">
+        Presso
+        <svg class="drop" viewBox="0 0 24 32" aria-hidden="true">
+          <path d="M12 2 C12 2 3 15 3 22 a9 9 0 1 0 18 0 C21 15 12 2 12 2 Z"/>
+        </svg>
+      </a>
+      <p>Cold-pressed in Brooklyn since 2024. Distributed in 240 fridges across NYC, LA &amp; Mexico City.</p>
+    </div>
+    <div class="col">
+      <h4>Shop</h4>
+      <a href="#">All flavors</a>
+      <a href="#">6-packs</a>
+      <a href="#">Subscriptions</a>
+      <a href="#">Gift cards</a>
+    </div>
+    <div class="col">
+      <h4>Presso World</h4>
+      <a href="#">About</a>
+      <a href="#">Stockists</a>
+      <a href="#">Wholesale</a>
+      <a href="#">Press</a>
+    </div>
+    <div class="col">
+      <h4>Talk to us</h4>
+      <a href="mailto:hello@drinkpresso.com">hello@drinkpresso.com</a>
+      <a href="#">@drinkpresso</a>
+      <a href="#">TikTok</a>
+      <a href="#">FAQ</a>
+    </div>
+  </div>
+  <div class="copy-foot">
+    <span>© 2026 Presso Inc. — Drink loud.</span>
+    <span>Privacy · Terms · Recycle the glass please</span>
+  </div>
+</footer>
+
+<script>
+  const io = new IntersectionObserver(
+    es => es.forEach(e => { if (e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } }),
+    { threshold: .12 }
+  );
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+</script>
+
+</body>
+</html>
