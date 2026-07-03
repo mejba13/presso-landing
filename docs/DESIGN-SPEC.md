@@ -1,8 +1,8 @@
-# Handoff: PULPA — Landing Page
+# Handoff: Presso — Landing Page
 
 ## Overview
 
-This is a marketing landing page for **PULPA**, a cold-pressed juice brand. The design is a single, scroll-driven long page with a loud, chaotic, "loud life" personality — bold typography, hot magenta background, playful stickers, a rotating marquee, and product cards. It is meant to feel like a design-forward CPG brand (juice/soda) targeting a Gen Z / millennial audience — closer to a fashion drop than a supermarket product page.
+This is a marketing landing page for **Presso**, a cold-pressed juice brand. The design is a single, scroll-driven long page with a loud, chaotic, "loud life" personality — bold typography, hot magenta background, playful stickers, a rotating marquee, and product cards. It is meant to feel like a design-forward CPG brand (juice/soda) targeting a Gen Z / millennial audience — closer to a fashion drop than a supermarket product page.
 
 The page contains the following sections, in order:
 
@@ -34,11 +34,11 @@ This is a single long-scroll marketing page. All sections live on one route (`/`
 
 - **Layout:** 3-column CSS grid — `auto 1fr auto`. Padding `22px 32px`. Gap `24px`. Vertically centered.
 - **Brand mark (left):**
-  - Text "PULPA" + a decorative dot
+  - Text "Presso" + a decorative dot
   - Font: Bricolage Grotesque 800, `36px`, letter-spacing `-0.04em`, line-height 1
   - Color: `--ink` (#1a0d2e)
   - Rotated `-2deg` by default; on hover rotates to `+2deg` and scales to `1.05` (transition `0.3s`)
-  - Dot: `10px × 10px` yellow (`--yellow` #ffd60a) circle with a 3px ink ring (`box-shadow: 0 0 0 3px var(--ink)`), positioned inline after "PULPA" with `margin-left: 4px` and `margin-top: 8px`
+  - Dot: `10px × 10px` yellow (`--yellow` #ffd60a) circle with a 3px ink ring (`box-shadow: 0 0 0 3px var(--ink)`), positioned inline after "Presso" with `margin-left: 4px` and `margin-top: 8px`
 - **Nav links (center, `justify-self: center`):**
   - Flex row, `gap: 8px`, unstyled `<ul>`
   - Items: "Flavors", "Story", "Stockists", "Wholesale"
@@ -76,7 +76,7 @@ This is a single long-scroll marketing page. All sections live on one route (`/`
   - Secondary "Read the story": `padding: 20px 28px`, transparent bg, `border: 3px solid var(--ink)`, color `--ink`, `border-radius: 99px`, weight 800 `18px`. Hover: fill ink, cream text, `rotate(2deg) scale(1.05)`.
 - **Hero image block:**
   - Wrapper: `max-width: 1100px`, `margin: 60px auto 0`, `padding: 0 32px`, positioned relative
-  - Image frame: `border-radius: 36px`, `border: 6px solid var(--ink)`, `box-shadow: 14px 14px 0 var(--ink)` (hard offset shadow, not blur), `aspect-ratio: 16/10`, background `assets/img/03-pulpa-splash.jpg` centered and covered
+  - Image frame: `border-radius: 36px`, `border: 6px solid var(--ink)`, `box-shadow: 14px 14px 0 var(--ink)` (hard offset shadow, not blur), `aspect-ratio: 16/10`, background `assets/img/03-presso-splash.jpg` centered and covered
   - **Two circular stickers absolute-positioned over the frame:**
     - `.sticker.s-tl` — top-left, offset `top: -30px; left: -30px`, `140 × 140px`, yellow bg, ink text "COLD / PRESSED / ★ ★ ★", `font-size: 15px`, spins slowly (`14s linear infinite`, starts at `-12deg`)
     - `.sticker.s-br` — bottom-right, offset `bottom: -40px; right: -30px`, `160 × 160px`, green bg, "NEW / FLAVOR / ↓", `font-size: 20px`, spins reverse (`18s`)
@@ -107,8 +107,8 @@ This is a single long-scroll marketing page. All sections live on one route (`/`
   - **Description** `<p>`: `15px`, line-height 1.45, color `#4a3760`, `margin-bottom: 20px`
   - **CTA button**: full-width, `padding: 14px`, ink bg, cream text, `border-radius: 99px`, Bricolage 800 `16px`. Hover: bg → `--pink`, `rotate(-2deg)`.
 - **Per-card variations:**
-  - `.f1` — background `#ffe9d4` (peach). Number "No. 01 / WAKE-UP CALL". Name "Orange Riot". Price "$24". Body: "Florida valencias, ginger, a dirty splash of lemon. Tastes like sunrise yelling." Image: `assets/img/03-pulpa-splash.jpg`.
-  - `.f2` — background `#d8e7ff` (soft blue). **Rotated `1deg`** by default. Number "No. 02 / NEW DROP". Name "Berry Brawl". Price "$26". Body: "Wild blackberry, hibiscus, and that pomegranate that bites back. Magenta forever." Image: `assets/img/03-pulpa-bottle.jpg`.
+  - `.f1` — background `#ffe9d4` (peach). Number "No. 01 / WAKE-UP CALL". Name "Orange Riot". Price "$24". Body: "Florida valencias, ginger, a dirty splash of lemon. Tastes like sunrise yelling." Image: `assets/img/03-presso-splash.jpg`.
+  - `.f2` — background `#d8e7ff` (soft blue). **Rotated `1deg`** by default. Number "No. 02 / NEW DROP". Name "Berry Brawl". Price "$26". Body: "Wild blackberry, hibiscus, and that pomegranate that bites back. Magenta forever." Image: `assets/img/03-presso-bottle.jpg`.
   - `.f3` — background `#d4f7e2` (mint). Number "No. 03 / FAN FAVORITE". Name "Green Scream". Price "$24". Body: "Cucumber, mint, kale, lime. The 'I'm being healthy' one — but make it loud." **Visual is a placeholder** rather than a photo: a diagonal green→light-green gradient (`linear-gradient(135deg, var(--green), #7fffba)`) with a large `🥒` emoji (Bricolage 800, `80px`, ink color) centered. Its transform is reset (`transform: none`) so the visual doesn't inherit rotation. Replace with a real product photo when available.
 - All three cards fade/slide-in via the `.reveal` observer.
 
@@ -135,14 +135,14 @@ This is a single long-scroll marketing page. All sections live on one route (`/`
 - **Container:** background `--ink`, color `--cream`, `padding: 60px 32px 30px`
 - **Grid:** `grid-template-columns: 2fr 1fr 1fr 1fr`, `gap: 32px`, `max-width: 1240px`, centered. Collapses to `1fr 1fr` (with `padding: 0`) below 780px.
 - **Column 1 (brand):**
-  - Big wordmark: "PULPA" + dot. Bricolage 800, `80px` (mobile `54px`), line-height 0.85, letter-spacing `-0.04em`, color `--cream`. Dot is a `20 × 20px` yellow circle with `margin-left: 6px`.
+  - Big wordmark: "Presso" + dot. Bricolage 800, `80px` (mobile `54px`), line-height 0.85, letter-spacing `-0.04em`, color `--cream`. Dot is a `20 × 20px` yellow circle with `margin-left: 6px`.
   - Paragraph below: `14px`, opacity 0.7, line-height 1.5, `max-width: 300px`. Copy: "Cold-pressed in Brooklyn since 2024. Distributed in 240 fridges across NYC, LA & Mexico City."
 - **Column 2 — "Shop":** links "All flavors", "6-packs", "Subscriptions", "Gift cards"
-- **Column 3 — "Pulpa World":** links "About", "Stockists", "Wholesale", "Press"
-- **Column 4 — "Talk to us":** "hello@drinkpulpa.com" (mailto), "@drinkpulpa", "TikTok", "FAQ"
+- **Column 3 — "Presso World":** links "About", "Stockists", "Wholesale", "Press"
+- **Column 4 — "Talk to us":** "hello@drinkpresso.com" (mailto), "@drinkpresso", "TikTok", "FAQ"
 - **Column headings** `<h4>`: color `--yellow`, DM Mono `12px`, letter-spacing `0.18em`, uppercase, `margin-bottom: 14px`
 - **Link style:** block, `padding: 3px 0`, `font-size: 15px`, opacity 0.8. Hover: opacity 1, color `--yellow`.
-- **Bottom row (`.copy-foot`):** max-width 1240, `margin: 40px auto 0`, `padding-top: 24px`, `border-top: 1px solid rgba(255,244,214,0.2)`, flex justify-between, DM Mono `12px`, opacity 0.6. Left: "© 2026 PULPA Inc. — Drink loud." Right: "Privacy · Terms · Recycle the glass please".
+- **Bottom row (`.copy-foot`):** max-width 1240, `margin: 40px auto 0`, `padding-top: 24px`, `border-top: 1px solid rgba(255,244,214,0.2)`, flex justify-between, DM Mono `12px`, opacity 0.6. Left: "© 2026 Presso Inc. — Drink loud." Right: "Privacy · Terms · Recycle the glass please".
 
 ### Background decoration (fixed, all sections)
 
@@ -301,21 +301,21 @@ The prototype does not include some things production should have:
 - **Stickers**: absolute overlay text ("COLD PRESSED", "NEW FLAVOR"). Add `aria-hidden="true"` if the same info appears elsewhere, otherwise expose it in the DOM order.
 - **Buttons vs links**: "Add to fridge" is a `<button>` today. Keep it a button (it triggers an action, not navigation). "Order a 6-pack →" is currently an `<a href="#flavors">` — that's correct if it scrolls; make sure the destination has `tabindex="-1"` focus handling or use `<button>` if it opens a cart.
 - **Focus states**: none defined in the source. Add visible focus rings — a solid `3px solid var(--yellow)` outline offset by 3px works with the brand.
-- **Alt text**: the flavor `<img>`s currently have empty `alt=""`. That's fine if they're decorative (product name is already in text); otherwise write descriptive alts like "Pulpa Orange Riot bottle, mid-splash".
+- **Alt text**: the flavor `<img>`s currently have empty `alt=""`. That's fine if they're decorative (product name is already in text); otherwise write descriptive alts like "Presso Orange Riot bottle, mid-splash".
 
 ## Assets
 
 Bundled in `assets/img/`:
 
-- `03-pulpa-splash.jpg` — hero image and Orange Riot card image. High-res juice-splash photo. ~2 MB — **compress + convert to WebP/AVIF** in production; also generate a `srcset` (768w, 1200w, 1800w) and lazy-load below-the-fold copies.
-- `03-pulpa-bottle.jpg` — Berry Brawl card image. Bottle product shot on solid ground. ~1.9 MB — same treatment.
+- `03-presso-splash.jpg` — hero image and Orange Riot card image. High-res juice-splash photo. ~2 MB — **compress + convert to WebP/AVIF** in production; also generate a `srcset` (768w, 1200w, 1800w) and lazy-load below-the-fold copies.
+- `03-presso-bottle.jpg` — Berry Brawl card image. Bottle product shot on solid ground. ~1.9 MB — same treatment.
 
 Missing / to-source:
 
 - **Green Scream real photo** — currently a placeholder (mint gradient + 🥒 emoji). Get a real product shot before launch.
-- **Real press logos** — the "As featured in" strip renders publication names as plain type. If Pulpa has actual placement, use real SVG logos; if they don't, either kill this section or keep it as-typed with copy the legal team is comfortable with.
+- **Real press logos** — the "As featured in" strip renders publication names as plain type. If Presso has actual placement, use real SVG logos; if they don't, either kill this section or keep it as-typed with copy the legal team is comfortable with.
 - **Favicon / app icons** — not included.
-- **Open Graph / Twitter card image** — not included. Recommend a 1200×630 image using the hero splash + big "PULPA" wordmark.
+- **Open Graph / Twitter card image** — not included. Recommend a 1200×630 image using the hero splash + big "Presso" wordmark.
 - **Fonts** — currently loaded from Google Fonts (`Bricolage Grotesque` + `DM Mono`). If the target site self-hosts fonts, download the woff2 subsets and update the `@font-face` declarations.
 
 ## Files
@@ -323,7 +323,7 @@ Missing / to-source:
 Copies of the prototype are included in this handoff folder for reference:
 
 - `index.html` — the full standalone prototype (all CSS in `<style>`, one `<script>` for reveal observer)
-- `assets/img/03-pulpa-splash.jpg` — hero + Orange Riot photo
-- `assets/img/03-pulpa-bottle.jpg` — Berry Brawl photo
+- `assets/img/03-presso-splash.jpg` — hero + Orange Riot photo
+- `assets/img/03-presso-bottle.jpg` — Berry Brawl photo
 
 Open `index.html` in a browser to interact with the design (hover states, marquee, sticker spin, scroll reveals) before implementation.

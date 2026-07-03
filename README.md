@@ -68,8 +68,8 @@ presso-landing/
 ├── apple-touch-icon.png       # 180×180 iOS home-screen icon
 ├── assets/
 │   └── img/
-│       ├── 03-pulpa-splash.jpg   # Hero + Orange Riot photo
-│       └── 03-pulpa-bottle.jpg   # Berry Brawl photo
+│       ├── 03-presso-splash.jpg   # Hero + Orange Riot photo
+│       └── 03-presso-bottle.jpg   # Berry Brawl photo
 └── docs/
     ├── DESIGN-SPEC.md         # Full design handoff spec (tokens, sections, motion)
     └── preview.png            # Hero preview used in this README
