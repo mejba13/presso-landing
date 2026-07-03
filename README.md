@@ -44,6 +44,7 @@ python3 -m http.server 8731
 - **Per-word display type** — the hero headline colors and animates each word independently.
 - **Motion, considered** — scroll-reveal (IntersectionObserver), infinite marquee, floating background blobs, spinning stickers, headline wiggle — all disabled under `prefers-reduced-motion`.
 - **Collectible product cards** — per-flavor accent colors, corner number stickers, category tags, ratings, per-bottle pricing, and animated CTAs.
+- **Brand film + key visual** — an autoplaying, muted, looping product film (with a sound toggle, paused under reduced-motion) and a full branded key visual, both set in framed brutalist blocks with corner stickers.
 - **Accessible by default** — visible keyboard focus rings, reduced-motion support, semantic landmarks, `aria-hidden` on decorative motion.
 - **Responsive** — a single `≤780px` breakpoint collapses the nav, flavor grid, and footer.
 - **Full favicon set** — SVG + `.ico` + Apple touch icon + `theme-color`.
@@ -67,9 +68,13 @@ presso-landing/
 ├── favicon.ico                # 16/32/48px fallback
 ├── apple-touch-icon.png       # 180×180 iOS home-screen icon
 ├── assets/
-│   └── img/
-│       ├── 03-presso-splash.jpg   # Hero + Orange Riot photo
-│       └── 03-presso-bottle.jpg   # Berry Brawl photo
+│   ├── img/
+│   │   ├── 03-presso-splash.jpg   # Hero + Orange Riot photo
+│   │   ├── 03-presso-bottle.jpg   # Berry Brawl photo
+│   │   ├── juice-making.png       # Key-visual band (hand-pressed juice)
+│   │   └── branding-poster.jpg    # Poster frame for the brand film
+│   └── video/
+│       └── branding-video.mp4     # Brand film (1080p, web-optimized)
 └── docs/
     ├── DESIGN-SPEC.md         # Full design handoff spec (tokens, sections, motion)
     └── preview.png            # Hero preview used in this README

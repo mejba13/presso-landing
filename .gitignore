@@ -17,3 +17,6 @@ v1_desktop.jpeg
 v1_mobile.jpeg
 v1_tablet.jpeg
 v2_desktop.jpeg
+
+# Heavy 4K source video (web-optimized copy lives in assets/video/)
+/branding-video.mp4
